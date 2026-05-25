@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CFA Level I · Plan de Estudio 2025–2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F7F5F0;
+    --bg2: #EFECE5;
+    --bg3: #E5E1D8;
+    --card: #FFFFFF;
+    --text: #1A1714;
+    --text2: #5C5650;
+    --text3: #9B968E;
+    --border: rgba(26,23,20,0.1);
+    --border2: rgba(26,23,20,0.18);
+
+    --blue: #1B5FAA;
+    --blue-bg: #E6F1FB;
+    --blue-mid: #378ADD;
+    --green: #3B6D11;
+    --green-bg: #EAF3DE;
+    --green-mid: #639922;
+    --amber: #854F0B;
+    --amber-bg: #FAEEDA;
+    --amber-mid: #BA7517;
+    --pink: #99355A;
+    --pink-bg: #FBEAF0;
+    --pink-mid: #D4537E;
+
+    --radius: 10px;
+    --radius-lg: 16px;
+  }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--text);
+    color: #F7F5F0;
+    padding: 72px 48px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: 'CFA';
+    position: absolute;
+    right: -20px;
+    top: -30px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 240px;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(247,245,240,0.45);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(38px, 6vw, 72px);
+    line-height: 1.05;
+    font-weight: 400;
+    margin-bottom: 12px;
+    max-width: 600px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: rgba(247,245,240,0.55);
+  }
+  .hero-sub {
+    font-size: 15px;
+    color: rgba(247,245,240,0.5);
+    margin-top: 16px;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+  }
+  .hero-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: rgba(247,245,240,0.35);
+    margin-top: 8px;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+  }
+  .stat-item {
+    padding: 28px 32px;
+    border-right: 1px solid var(--border);
+    text-align: center;
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 48px;
+    line-height: 1;
+    color: var(--text);
+    display: block;
+  }
+  .stat-unit {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 6px;
+  }
+
+  /* ── PRIORITY BANNER ── */
+  .priority-banner {
+    margin: 40px 48px 0;
+    padding: 18px 24px;
+    background: var(--text);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .priority-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(247,245,240,0.4);
+    white-space: nowrap;
+  }
+  .priority-items {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+  .p-chip {
+    padding: 5px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: rgba(247,245,240,0.85);
+    border: 1px solid rgba(247,245,240,0.15);
+  }
+  .p-chip span {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(247,245,240,0.35);
+    margin-left: 6px;
+  }
+  .priority-total {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: rgba(247,245,240,0.35);
+    white-space: nowrap;
+    margin-left: auto;
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .main { padding: 40px 48px 80px; }
+
+  /* ── PHASE SECTION ── */
+  .phase-section { margin-bottom: 52px; }
+
+  .phase-header-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 6px;
+  }
+  .phase-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+  .phase-title-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--text);
+  }
+  .phase-dates-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--text3);
+    margin-left: auto;
+  }
+
+  .phase-rule {
+    padding: 12px 16px;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 13px;
+    color: var(--text2);
+    margin-bottom: 20px;
+    border-left: 3px solid;
+    background: var(--bg2);
+    line-height: 1.5;
+  }
+
+  /* phase colors */
+  .p1 .phase-num { background: var(--blue-bg); color: var(--blue); }
+  .p1 .phase-rule { border-color: var(--blue-mid); }
+  .p2 .phase-num { background: var(--green-bg); color: var(--green); }
+  .p2 .phase-rule { border-color: var(--green-mid); }
+  .p3 .phase-num { background: var(--amber-bg); color: var(--amber); }
+  .p3 .phase-rule { border-color: var(--amber-mid); }
+
+  /* ── WEEK GRID ── */
+  .week-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  }
+
+  .week-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    transition: border-color 0.15s, transform 0.15s;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .week-card:hover {
+    border-color: var(--border2);
+    transform: translateY(-2px);
+  }
+  .week-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+  }
+  .week-card.c-blue::before { background: var(--blue-mid); }
+  .week-card.c-green::before { background: var(--green-mid); }
+  .week-card.c-amber::before { background: var(--amber-mid); }
+  .week-card.c-pink::before { background: var(--pink-mid); }
+
+  .week-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--text3);
+    letter-spacing: 0.06em;
+    margin-bottom: 6px;
+  }
+  .week-topic {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .week-sub {
+    font-size: 11px;
+    color: var(--text3);
+    line-height: 1.45;
+  }
+  .week-badge {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    padding: 2px 7px;
+    border-radius: 100px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  .badge-ethics { background: var(--pink-bg); color: var(--pink); }
+  .badge-quant  { background: var(--blue-bg); color: var(--blue); }
+  .badge-mock   { background: var(--text); color: #F7F5F0; }
+  .badge-final  { background: var(--amber-bg); color: var(--amber); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 48px 0;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    padding: 28px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer p {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: var(--text3);
+    letter-spacing: 0.06em;
+  }
+  .exam-date {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--text);
+    font-weight: 500;
+    background: var(--card);
+    padding: 8px 18px;
+    border-radius: 100px;
+    border: 1px solid var(--border2);
+  }
+  .exam-date span {
+    color: var(--text3);
+    font-weight: 400;
+    margin-right: 8px;
+  }
+
+  /* ── TIMELINE BAR ── */
+  .timeline {
+    margin: 0 48px 40px;
+    padding: 20px 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+  .tl-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 12px;
+  }
+  .tl-track {
+    display: flex;
+    height: 8px;
+    border-radius: 100px;
+    overflow: hidden;
+    gap: 2px;
+  }
+  .tl-seg {
+    border-radius: 100px;
+    transition: opacity 0.2s;
+  }
+  .tl-seg:hover { opacity: 0.75; }
+  .tl-seg.p1-seg { background: var(--blue-mid); flex: 4.5; }
+  .tl-seg.p2-seg { background: var(--green-mid); flex: 3; }
+  .tl-seg.p3-seg { background: var(--amber-mid); flex: 2; }
+  .tl-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+  }
+  .tl-lbl {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--text3);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .tl-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  @media (max-width: 640px) {
+    .hero, .main, footer, .priority-banner, .timeline { padding-left: 20px; padding-right: 20px; }
+    .priority-banner, .timeline { margin-left: 16px; margin-right: 16px; }
+    .stats-bar { grid-template-columns: 1fr; }
+    .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+    .stat-item:last-child { border-bottom: none; }
+    .hero::before { font-size: 120px; }
+    .phase-header-row { flex-wrap: wrap; }
+    .phase-dates-text { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <p class="hero-tag">Plan de estudio · 2025–2026</p>
+  <h1>CFA Level I<br><em>Road map</em></h1>
+  <p class="hero-sub">Tres fases, nueve meses, un objetivo.</p>
+  <p class="hero-date">Mayo 2025 → Febrero 2026 · Examen ~28 feb · L–V 1,5 h · Sáb 2,5 h</p>
+</header>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">9</span>
+    <span class="stat-unit">meses totales</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">380h</span>
+    <span class="stat-unit">horas totales</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-num">10h</span>
+    <span class="stat-unit">por semana</span>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<div class="timeline">
+  <p class="tl-label">Distribución temporal</p>
+  <div style="font-size:12px; color:var(--text2); margin-bottom:14px; display:flex; gap:20px; flex-wrap:wrap;">
+    <span>Lun–Vie <strong>1,5 h/día</strong></span>
+    <span>Sábado <strong>2,5 h</strong></span>
+    <span style="color:var(--text3)">Domingo descanso</span>
+    <span style="margin-left:auto; color:var(--text3)">10 h/sem · 380 h totales · CFA recomienda ~300 h ✓</span>
+  </div>
+  <div class="tl-track">
+    <div class="tl-seg p1-seg" title="Fase 1 · May–Sep"></div>
+    <div class="tl-seg p2-seg" title="Fase 2 · Oct–Dic"></div>
+    <div class="tl-seg p3-seg" title="Fase 3 · Ene–Feb"></div>
+  </div>
+  <div class="tl-labels">
+    <span class="tl-lbl"><span class="tl-dot" style="background:var(--blue-mid)"></span> Fase 1 · May–Sep</span>
+    <span class="tl-lbl"><span class="tl-dot" style="background:var(--green-mid)"></span> Fase 2 · Oct–Dic</span>
+    <span class="tl-lbl"><span class="tl-dot" style="background:var(--amber-mid)"></span> Fase 3 · Ene–Feb</span>
+  </div>
+</div>
+
+<!-- PRIORITY BANNER -->
+<div class="priority-banner">
+  <p class="priority-label">Máxima prioridad</p>
+  <div class="priority-items">
+    <span class="p-chip">Ethics <span>15–20%</span></span>
+    <span class="p-chip">FSA <span>11–14%</span></span>
+    <span class="p-chip">Equity <span>11–14%</span></span>
+    <span class="p-chip">Fixed Income <span>11–14%</span></span>
+  </div>
+  <span class="priority-total">≈ 55% del examen</span>
+</div>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+  <!-- FASE 1 -->
+  <section class="phase-section p1">
+    <div class="phase-header-row">
+      <span class="phase-num">Fase 1</span>
+      <span class="phase-title-text">Construcción</span>
+      <span class="phase-dates-text">26 may → 30 sep</span>
+    </div>
+    <div class="phase-rule">
+      Regla de oro: lees → haces 20–30 preguntas tipo CFA inmediatamente. Nunca más de 1 semana sin practicar.
+    </div>
+    <div class="week-grid">
+
+      <div class="week-card c-blue">
+        <span class="week-badge badge-quant">Quant</span>
+        <div class="week-label">Sem 1–2 · 26 may</div>
+        <div class="week-topic">Quantitative Methods</div>
+        <div class="week-sub">Módulos 1–11 · TVM, estadística, regresión</div>
+      </div>
+
+      <div class="week-card c-pink">
+        <span class="week-badge badge-ethics">Ethics ①</span>
+        <div class="week-label">Sem 3–4 · 9 jun</div>
+        <div class="week-topic">Ethics — 1ª lectura</div>
+        <div class="week-sub">Standards I–VII + GIPS · peso 15–20%</div>
+      </div>
+
+      <div class="week-card c-blue">
+        <div class="week-label">Sem 5–7 · 23 jun</div>
+        <div class="week-topic">Financial Statement Analysis</div>
+        <div class="week-sub">IFRS/GAAP, ratios, análisis · peso 11–14%</div>
+      </div>
+
+      <div class="week-card c-blue">
+        <div class="week-label">Sem 8–9 · 14 jul</div>
+        <div class="week-topic">Economics</div>
+        <div class="week-sub">Micro, macro, divisas, política monetaria</div>
+      </div>
+
+      <div class="week-card c-blue">
+        <div class="week-label">Sem 10–11 · 28 jul</div>
+        <div class="week-topic">Corporate Issuers</div>
+        <div class="week-sub">Capital structure, dividendos, gobernanza</div>
+      </div>
+
+      <div class="week-card c-blue">
+        <div class="week-label">Sem 12–13 · 11 ago</div>
+        <div class="week-topic">Equity Investments</div>
+        <div class="week-sub">Mercados, valoración, DDM, múltiplos</div>
+      </div>
+
+      <div class="week-card c-blue">
+        <div class="week-label">Sem 14–15 · 25 ago</div>
+        <div class="week-topic">Fixed Income</div>
+        <div class="week-sub">Bonos, duration, convexity, crédito, MBS</div>
+      </div>
+
+      <div class="week-card c-blue">
+        <div class="week-label">Sem 16 · 8 sep</div>
+        <div class="week-topic">Derivatives</div>
+        <div class="week-sub">Forwards, futuros, swaps, opciones, pricing</div>
+      </div>
+
+      <div class="week-card c-blue">
+        <div class="week-label">Sem 17 · 15 sep</div>
+        <div class="week-topic">Alternative Investments</div>
+        <div class="week-sub">PE, hedge funds, real estate, digital assets</div>
+      </div>
+
+      <div class="week-card c-blue">
+        <div class="week-label">Sem 18 · 22 sep</div>
+        <div class="week-topic">Portfolio Management</div>
+        <div class="week-sub">CAPM, SML, construcción, behavioral biases</div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- FASE 2 -->
+  <section class="phase-section p2">
+    <div class="phase-header-row">
+      <span class="phase-num">Fase 2</span>
+      <span class="phase-title-text">Consolidación</span>
+      <span class="phase-dates-text">1 oct → 31 dic</span>
+    </div>
+    <div class="phase-rule">
+      Objetivo: llegar a 65–70% de acierto en mocks antes de enero. Todo error se convierte en sesión de repaso.
+    </div>
+    <div class="week-grid">
+
+      <div class="week-card c-green">
+        <span class="week-badge badge-mock">Mock</span>
+        <div class="week-label">Oct · cada 2 semanas</div>
+        <div class="week-topic">Mock exams completos</div>
+        <div class="week-sub">180 preguntas · análisis de errores por área</div>
+      </div>
+
+      <div class="week-card c-pink">
+        <span class="week-badge badge-ethics">Ethics ②</span>
+        <div class="week-label">Octubre</div>
+        <div class="week-topic">Ethics — 2ª lectura</div>
+        <div class="week-sub">Releer Standards + aplicar casos prácticos</div>
+      </div>
+
+      <div class="week-card c-green">
+        <div class="week-label">Diario · 20 min</div>
+        <div class="week-topic">Flashcards de fórmulas</div>
+        <div class="week-sub">Duration, CAPM, YTM, Greeks, ratios clave</div>
+      </div>
+
+      <div class="week-card c-green">
+        <div class="week-label">Nov–Dic · según resultados</div>
+        <div class="week-topic">Repaso áreas débiles</div>
+        <div class="week-sub">Detectadas en mocks · sesiones focalizadas</div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- FASE 3 -->
+  <section class="phase-section p3">
+    <div class="phase-header-row">
+      <span class="phase-num">Fase 3</span>
+      <span class="phase-title-text">Intensivo final</span>
+      <span class="phase-dates-text">1 ene → 27 feb</span>
+    </div>
+    <div class="phase-rule">
+      Simular condiciones reales: 180 preguntas, tiempo estricto, sin interrupciones. Revisar cada error.
+    </div>
+    <div class="week-grid">
+
+      <div class="week-card c-pink">
+        <span class="week-badge badge-ethics">Ethics ③</span>
+        <div class="week-label">Enero</div>
+        <div class="week-topic">Ethics — 3ª lectura</div>
+        <div class="week-sub">Casos difíciles · Standards VII + GIPS</div>
+      </div>
+
+      <div class="week-card c-amber">
+        <span class="week-badge badge-final">Intensivo</span>
+        <div class="week-label">Ene–Feb · 2–3× semana</div>
+        <div class="week-topic">Mock exams intensivos</div>
+        <div class="week-sub">Cronometrados · análisis exhaustivo de errores</div>
+      </div>
+
+      <div class="week-card c-amber">
+        <div class="week-label">Diario</div>
+        <div class="week-topic">Fórmulas y glosario</div>
+        <div class="week-sub">Repaso rápido · 15 min cada mañana</div>
+      </div>
+
+      <div class="week-card c-amber">
+        <div class="week-label">25–26 feb</div>
+        <div class="week-topic">Pre-examen</div>
+        <div class="week-sub">Solo repaso ligero · descanso obligatorio</div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <p>CFA Level I · Plan personal · 9 meses</p>
+  <div class="exam-date"><span>Examen</span>~28 feb 2026</div>
+</footer>
+
+</body>
+</html>
